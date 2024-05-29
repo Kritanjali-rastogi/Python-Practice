@@ -1,33 +1,34 @@
 # Program to do arithmatical operations 
 
-list1 = ['Addition', 'Division', 'Substraction', 'Multiplication']
+
 print("Welcome to the basic calulator")
 
-operation = True
-while operation not in list1:
-    operation = input("What Would you like to perform: Addition, Division, Substraction, or Multiplication? \n")
+list1 = ['addition', 'substraction', 'multiplication', 'division']
 
+operation = ''
+while operation.lower() not in list1:
+    print("Enter the operation correctly")
+    operation = input("Enter one: Addition, Substraction, Multilpication, Division: \n")
 
 print("Enter the numbers for which you want to perform the above operation")
-num1 = float(input("Enter the first number. Note that this will be the numertaor in case of division: \n"))
-num2 = float(input("Enter the second number. Note that this will be the denominator in case of division: \n"))
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
 
-def calculation(num1,num2):
-    
-    try: 
-        if operation == "Addition":
-            return num1 + num2
-        elif operation == "Substraction":
-            return num1 - num2
-        elif operation == "Multiplication":
-            return num1 * num2
-        elif operation == "Division":
+
+def calculator(num1,num2,operation):
+    try:
+        if operation.lower() == "addition":
+            return num1+num2
+        elif operation.lower() == "substraction":
+            return num1-num2
+        elif operation.lower() == "multiplication":
+            return num1*num2
+        elif operation.lower() == "division":
             return num1/num2
-        
     except ZeroDivisionError:
-        print("Denominator cannot be 0. Please enter another number")
+        print("Denominator cannot be 0. Enter a different second number")
 
-result = (calculation(num1,num2))
+result = calculator(num1,num2,operation)
 
 if result!= None:
-    print(f" The {operation} of the given number results in {result}")
+    print(f"The {operation.lower()} of the numbers returns {result}")

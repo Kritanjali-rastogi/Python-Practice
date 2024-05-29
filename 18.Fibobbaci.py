@@ -1,22 +1,28 @@
 # Program to Print the Fibonacci sequence
 
 
-num = int(input("You want to see the fibonacci series of how many terms: "))
+num = int(input("What should be the length of the fibonaaci series?: "))
 
-
-def series(num):
-
-    fibonnaci_series = []
+def fibo_series(num):
     
-    for i in range(0,num):
-        if i==0:
-            fibonnaci_series.append(0)
-        if i==1:
-            fibonnaci_series.append(1)  
-        else:  
-            fibonnaci_series.append(fibonnaci_series[i-1]+fibonnaci_series[i-2])
-    
-    return fibonnaci_series
+    if num==0:
+        series = []
+    elif num==1:
+        series = [0]
+    elif num==2:
+        series =[0,1]
+    else:
+        series =[0,1]
+        
+        for i in range(2,num):
+            term = series[i-1] + series[i-2]
+            series.append(term)
+            
 
-result = series(num)
+    return series
+
+result = fibo_series(num)
 print(result)
+
+
+

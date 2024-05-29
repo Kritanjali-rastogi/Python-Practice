@@ -1,8 +1,10 @@
 # Program to find words which are greater than given length k
 
-list1 = eval(input("Enter a list: "))
+words = input("Enter comma seprated words: ")
 
 k = int(input("Enter the length: "))
+
+list1 = [x.strip() for x in words.split(',')]
 
 def check(list1,k):
     solution = []
@@ -16,5 +18,4 @@ result = check(list1,k)
 
 print(f"The words that are greater than {k} in length are:")
 
-for item in result:
-    print(item)
+print(','.join(result))
