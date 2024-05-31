@@ -10,4 +10,4 @@ def string_sorting(string):
 
 result = string_sorting(string)
 
-print({result})
+print(result)

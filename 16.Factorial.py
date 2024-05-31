@@ -1,7 +1,5 @@
 # Program to Find the Factorial of a Number
 
-#5! = 5*4*3*2*1
-
 print("Enter a number to calculate factorial")
 
 num = int(input("Enter a number: "))
